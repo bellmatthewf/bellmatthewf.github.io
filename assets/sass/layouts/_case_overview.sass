@@ -1,0 +1,174 @@
+//- - - - - - - - - - - Case Overview Styling - - - - - - - - - - - //
+
+#first_case
+	margin-top: 0em
+
+.case_overview_left
+	min-height: 530px
+	padding: 60px
+	background-color: $background-white
+	border-radius: 3px
+	margin-top: 5em
+	margin-bottom: 5em
+	align-items: center
+	font-family: $code-font-main
+	perspective: 1000px
+	perspective-origin: right
+
+	.case_img_wrapper
+		@include preserve_aspect_ratio(60%)
+		position: absolute
+		width: 48%
+		top: 23%
+		right: -3%
+		box-shadow: 0px 0px 20px rgba(1,1,1,.15)
+		transform-origin: left
+		transition: transform 250ms ease-in
+
+
+		&:hover
+			transform: rotateY(-2deg) scale(1.03)
+			transition: transform 250ms ease-in
+
+		.case_img
+			@include position_photo(75%, 40%)
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			border: 1px solid grey
+
+	.case_text_wrapper
+		width: 46%
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+
+		.case_type
+			color: $text-color-grey
+			text-transform: uppercase
+			font-size: 18px
+			margin-top: .25em
+			margin-bottom: 1em
+
+		.title_link
+			@include animated_multiline_underline
+			font-size: 32px
+			font-weight: bold
+			line-height: 1.5
+
+		.case_desc
+			font-size: 18px
+			margin-bottom: 1.5em
+			line-height: 1.75
+			color: $text-color-grey2
+			margin-top: 2em
+
+	@include for_tablet_landscape_down	
+		padding: 40px
+		perspective: 1px
+		perspective-origin: center
+		margin-top: 3em
+		margin-bottom: 3em
+
+		.case_img_wrapper
+			width: 100%
+			position: relative
+			right: 0%
+			transform-origin: center
+
+			&:hover
+				transform: scale(1.03)
+
+		.case_text_wrapper
+			width: 100%
+			position: initial
+			transform: translateY(0%)
+
+			.case_type
+				margin-top: 2em
+
+			.title_link
+				font-size: 30px
+
+	@include for_tablet_portrait_down
+		padding: 25px
+		margin-top: 1.5em
+		margin-bottom: 1.5em
+
+		.case_text_wrapper
+			.case_type
+				font-size: 17px
+				margin-bottom: .5em
+
+			.title_link
+				font-size: 23px
+
+			.case_desc
+				font-size: 17px
+				margin-top: 1.25em
+				margin-bottom: 1.5em
+				line-height: 1.3
+
+//- - - - - - - - - - - Reverse Styling - - - - - - - - - - - //
+.case_overview_right
+	perspective-origin: left
+	@extend .case_overview_left
+
+	.case_img_wrapper
+		transform-origin: right
+		left: -3%
+
+		&:hover
+			transform: rotateY(2deg) scale(1.03)
+
+	.case_text_wrapper
+		right: 40px
+
+	@include for_tablet_landscape_down	
+		padding: 40px
+		perspective: 1px
+		perspective-origin: center
+		margin-top: 3em
+		margin-bottom: 3em
+
+		.case_img_wrapper
+			width: 100%
+			position: relative
+			left: 0%
+			transform-origin: center
+
+			&:hover
+				transform: scale(1.03)
+
+		.case_text_wrapper
+			width: 100%
+			position: initial
+			transform: translateY(0%)
+
+			.case_type
+				margin-top: 2em
+
+			.title_link
+				font-size: 30px
+
+	@include for_tablet_portrait_down
+		padding: 25px
+		margin-top: 1.5em
+		margin-bottom: 1.5em
+
+		.case_text_wrapper
+			.case_type
+				font-size: 17px
+				margin-bottom: .5em
+
+			.title_link
+				font-size: 23px
+
+			.case_desc
+				font-size: 17px
+				margin-top: 1.25em
+				margin-bottom: 1.5em
+				line-height: 1.3
+

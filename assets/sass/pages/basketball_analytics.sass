@@ -1,0 +1,35 @@
+//- - - - - - - - - - Import CSS Stylings - - - - - - - - - -//
+
+@charset 'UTF-8'
+
+// 1. Configuration and helpers
+@import '../abstracts/variables'
+@import '../abstracts/mixins_and_placeholders'
+
+//- - - - - - - - - - Contact Stylings - - - - - - - - - -//
+
+//This positions the footer at the bottom even though the page isn't that long by default
+html
+	height: 100%
+
+body
+	height: 100%
+
+#container
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+.main_title
+	margin-bottom: 2em
+
+	&:after
+		@include for_tablet_landscape_down
+			top: 120%
+
+iframe
+	margin-bottom: 2em
+
+footer
+	width: 100%

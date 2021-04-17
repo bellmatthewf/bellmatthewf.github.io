@@ -1,0 +1,33 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main_title {
+  margin-bottom: 2em;
+}
+@media only screen and (max-width: 900px) {
+  .main_title:after {
+    top: 120%;
+  }
+}
+
+iframe {
+  margin-bottom: 2em;
+}
+
+footer {
+  width: 100%;
+}
+
+/*# sourceMappingURL=basketball_analytics.css.map */

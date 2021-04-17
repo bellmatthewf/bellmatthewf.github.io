@@ -1,0 +1,70 @@
+//- - - - - - - - - - Import CSS Stylings - - - - - - - - - -//
+
+@charset 'UTF-8'
+
+// 1. Configuration and helpers
+@import '../abstracts/variables'
+@import '../abstracts/mixins_and_placeholders'
+
+
+//- - - - - - - - - - About Stylings - - - - - - - - - -//
+
+//This positions the footer at the bottom even though the page isn't that long by default
+html
+	height: 100%
+
+body
+	height: 100%
+
+#container
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+.main_title
+	margin-bottom: 2em
+
+#content_wrapper
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin-bottom: 2.5em
+
+	#about_info
+		width: 48%
+		font-family: $code-font-main
+		font-size: 20px
+		line-height: 1.35
+
+	#about_img_wrapper
+		position: relative
+		right: 5%
+		border-radius: 2px
+		overflow: hidden
+		width: 40%
+		max-width: 300px
+		border: 1px solid black
+		@include preserve_aspect_ratio(140%)
+
+		img
+			@include position_photo(70%, 20%)
+			filter: grayscale(20%)
+
+footer
+	width: 100%
+
+@include for_tablet_portrait_down
+	#content_wrapper
+		flex-direction: column-reverse
+
+		#about_info
+			width: 100%
+
+		#about_img_wrapper
+			right: 0%
+			border-radius: 2px
+			width: 200px
+			height: 200px
+			margin-bottom: 1.5em
+

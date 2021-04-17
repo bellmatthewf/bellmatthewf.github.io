@@ -1,0 +1,42 @@
+//- - - - - - - - - - Import CSS Stylings - - - - - - - - - -//
+
+@charset 'UTF-8'
+
+// 1. Configuration and helpers
+@import '../abstracts/variables'
+@import '../abstracts/mixins_and_placeholders'
+
+//- - - - - - - - - - Contact Stylings - - - - - - - - - -//
+
+
+//This positions the footer at the bottom even though the page isn't that long by default
+html, body
+	height: 100%
+
+#container
+	min-height: calc(100vh - 155px)
+	position: relative
+
+.main_title
+	margin-bottom: 2em
+
+#info_wrapper
+	padding-bottom: 2em
+
+#contact_info
+	font-family: $code-font-main
+	font-size: 22px
+	line-height: 1.35
+
+	span
+		font-weight: bold
+		display: inline-block
+
+	a
+		font-size: 22px
+		font-weight: bold
+		text-decoration: underline
+
+@include for_tablet_portrait_down
+	#contact_info, #contact_info a
+		font-size: 16px

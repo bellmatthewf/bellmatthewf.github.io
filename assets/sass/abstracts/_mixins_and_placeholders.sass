@@ -1,0 +1,54 @@
+//- - - - - - - - - - Placeholders and Mixins - - - - - - - - - - //
+
+@mixin animated_multiline_underline($color:$text-color-grey, $size:1.5px, $opacity:37px)
+	.underline 
+		width: calc(100%)
+		background-image: linear-gradient(transparent calc(100% - #{$size}), $color $opacity)
+		background-repeat: no-repeat
+		background-size: 0% 100%
+		transition: background-size 300ms
+
+	&:hover .underline
+		background-size: 100% 100%
+
+@mixin position_photo($anchorX:50%, $anchorY:50%)
+	width: 100%
+	height: 100%
+	object-fit: cover
+	object-position: $anchorX $anchorY
+
+@mixin preserve_aspect_ratio($padding_needed:56.25%)
+	display: inline-block
+	position: relative
+
+	&:after
+		padding-top: $padding_needed
+		display: block
+		content: ''
+
+	img
+		position: absolute
+		top:0
+		bottom:0
+		left:0
+		right:0
+
+@mixin create_wrapper($width:90%, $max-width:1550px, $padding:20px)
+	max-width: $max-width
+	margin-left: auto
+	margin-right: auto
+	padding-left: $padding
+	padding-right: $padding
+	width: $width
+
+@mixin for_desktop_down
+	@media only screen and (max-width: 1200px)
+		@content
+
+@mixin for_tablet_landscape_down
+	@media only screen and (max-width: 900px)
+		@content
+
+@mixin for_tablet_portrait_down
+	@media only screen and (max-width: 600px)
+		@content

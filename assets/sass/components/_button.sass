@@ -1,0 +1,92 @@
+//- - - - - - - - - - - Button Styling - - - - - - - - - - - //
+
+//Big black button, underline on hover
+.button_primary
+	font-family: $code-font-main
+	text-decoration: none
+	text-align: center
+	color: white
+	display: inline-block
+	color: white
+	background-color: black
+	text-transform: uppercase
+	font-weight: 700
+	padding: .6rem 2rem
+	
+	&:after
+		display: block
+		content: ''
+		width: 0
+		height: 2px
+		background-color: white
+
+	&:hover:after
+		width: 100%
+		transition: width 150ms ease-in
+
+//Always underlined button
+.button_secondary_hoverline
+	display: inline-block
+	font-family: $code-font-main
+	color: black
+	text-transform: uppercase
+	text-decoration: none
+	margin: .08em 0
+
+	&:after
+		display: block
+		content: ''
+		width: 0%
+		height: 2px
+		background-color: $highlight-color
+
+	&:hover:after
+		width: 100%
+		transition: width 150ms ease-in
+
+.button_secondary_hoverline_white
+	@extend .button_secondary_hoverline
+	color: white
+
+	&:after
+		background-color: white
+
+.button_case
+	font-weight: bold
+	position: relative
+
+	&:after
+		display: inline-block
+		position: absolute
+		top: 65%
+		left: 115%
+		transform: translate(0%, -50%)
+		content: ''
+		width: 100%
+		height: 100%
+		background-image: url("../images/arrow.png")
+		background-repeat: no-repeat
+		background-size: 25px 15px
+		transition: transform 200ms ease
+
+	&:hover:after
+		transform: translate(20%, -50%)
+		transition: transform 200ms ease
+
+.button_permaline
+	display: inline-block
+	font-family: $code-font-main
+	color: black
+	text-transform: uppercase
+	text-decoration: none
+	margin: .08em 0
+
+	&:after
+		display: block
+		content: ''
+		width: 100%
+		height: 2px
+		background-color: $highlight-color
+
+
+

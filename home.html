@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Matthew Bell | Analytics Portfolio</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+	<meta charset="utf-8">
+	<meta name="description" content="Matthew Bell's personal analytics portfolio. Based in Toronto and experienced with Python and SQL.">
+	<meta name="viewport" content="width=device-width">
+	<meta name="author" content="Matthew Bell">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/pages/home.css">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display%7CRoboto" rel="stylesheet">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136100886-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-136100886-1');
+	</script>
+</head>
+<body>
+	<header id="main_header">
+		<div class="header_wrapper">
+			<a href="home.html">
+				<img class="logo" src="assets/images/matthew_bell_analytics_logo.svg" alt="Matthew Bell's analytics portfolio logo">
+			</a>
+			<nav id="main_nav">
+				<a href="home.html">Home</a>
+				<a href="pages/cases.html">Cases</a>
+				<a href="pages/contact.html">Contact</a>
+			</nav>
+		</div>
+	</header>
+
+	<header id="hamburger_menu">
+		<nav id="mobile_nav">
+			<div id="menuToggle" onclick="stop_scroll()">
+				<input id="mobile_check" type="checkbox"/>
+				<span></span>
+				<span></span>
+				<span></span>
+				<ul id="menu">
+					<li><a href="home.html">Home</a></li>
+					<li><a href="pages/cases.html">Cases</a></li>
+					<li><a href="pages/contact.html">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<section id="banner">
+		<div id="photo_wrapper">
+			<img id="main_portrait" src="assets/images/matt_hero.jpg" alt="Photo of Matt">
+		</div>
+
+		<div id="banner_content">
+			<div id="banner_content_wrapper">
+				<h1 id="title">Data analytics specialist</h1>
+				<p id="info">Hi, my name is Matt Bell. I am a data analyst at PartnerStack, a software startup in Toronto, Ontario. My passion lies in data analytics, but I can also build data pipelines (ETL), spin up databases, and build sophisticated dashboards.
+				<br>
+				
+				<br> I am experienced with the following tools:<br>
+
+				Programming: Python, SQL, JavaScript
+				<br>Databases: PostGreSQL, MySQL
+				<br>Dashboarding: Tableau, Periscope, Matplotlib, Chartio
+				<br>Other: Excel (VBA / Macros), SalesForce (administration and scripting with Python), 3D Modelling
+				<br>
+				<br>Please find samples of my analytics work below.</p>
+				<a id="main_button" href="pages/cases.html" class="button_primary">My Cases</a>
+			</div>
+		</div>
+	</section>
+
+	<section id="cases">
+		<h2>Cases</h2>
+		
+		<div id="cases_display" class="title_wrapper">
+
+			<div class="case_box">
+				<a class= "img_wrapper" href="pages/toronto_analytics.html">
+					<div class="dark_cover"></div>
+					<img class="case_img" src="assets/images/toronto_home.jpg" alt="Toronto streetcar">
+				</a>
+				<div class="text_wrapper">
+					<p class="case_info">Python, SQL, MySQL, &amp; Tableau</p>
+					<a class="title_container" href="pages/toronto_analytics.html">
+						<h3 class="case_title"><span class="underline">Is Toronto's King Street pilot project worth it</span></h3>
+					</a>
+					<a class="case_button button_permaline" href="pages/toronto_analytics.html" >View Case</a>
+				</div>
+			</div>
+
+			<div class="case_box">
+				<a class= "img_wrapper" href="pages/basketball_analytics.html">
+					<div class="dark_cover"></div>
+					<img class="case_img" src="assets/images/basketball_home.jpg" alt="NBA stadium">
+				</a>
+				<div class="text_wrapper">
+					<p class="case_info">Python, Excel, &amp; Tableau</p>
+					<a class="title_container" href="pages/basketball_analytics.html">
+						<h3 class="case_title"><span class="underline">Drafting the ultimate fantasy basketball team</span></h3>
+					</a>
+					<a class="case_button button_permaline" href="pages/basketball_analytics.html" >View Case</a>
+				</div>
+			</div>
+
+			<div class="case_box">
+				<a class= "img_wrapper" href="pages/chess_analytics.html">
+					<div class="dark_cover"></div>
+					<img class="case_img" src="assets/images/chess_home.jpg" alt="Chess board and pieces">
+				</a>
+				<div class="text_wrapper">
+					<p class="case_info">Python, SQL, PostGreSQL, &amp; Tableau</p>
+					<a class="title_container" href="pages/chess_analytics.html">
+						<h3 class="case_title"><span class="underline">Improving my chess game with data analytics</span></h3>
+					</a>
+					<a class="case_button button_permaline" href="pages/chess_analytics.html" >View Case</a>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="see_overview_wrapper" class="title_wrapper">
+			<a href="pages/cases.html" class="button_primary">SEE OVERVIEW</a>
+		</div>
+	</section>
+
+	<footer>
+		<div id="footer_outer" class="footer_wrapper">
+			<div id="footer_left_wrapper">
+				<a href="home.html">
+					<img class="footer_logo" src="assets/images/matthew_bell_analytics_white_logo.svg" alt="Matthew Bell's analytics portfolio logo">
+				</a>
+				<p id="footer_contact_info">+1 (416) 801-8237<br><a href="mailto: bell.matthewf@gmail.com">bell.matthewf@gmail.com</a><br>Toronto, Ontario</p>
+
+			</div>
+			<nav id="footer_nav">
+				<a href="home.html" class="button_secondary_hoverline_white">Home</a>
+				<a href="pages/cases.html" class="button_secondary_hoverline_white">Cases</a>
+				<a href="pages/contact.html" class="button_secondary_hoverline_white">Contact</a>
+			</nav>
+		</div>
+	</footer>
+<script>
+	const stop_scroll = function () {
+		if (document.getElementById("mobile_check").checked === true) {
+			document.querySelector("body").style.overflow = "hidden"
+			document.querySelector("body").style.position = "fixed"
+		}
+		else {
+			document.querySelector("body").style.overflow = "initial"
+			document.querySelector("body").style.position = "initial"
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+//- - - - - - - - - - - Mobile Header Styling - - - - - - - - - - - //
+#hamburger_menu
+	position: absolute
+	overflow: hidden
+	top: 0%
+	right: 0%
+	width: 100%
+	height: 100vh
+	z-index: 20
+	pointer-events: none
+
+	#mobile_nav
+		position: absolute
+		right: 20px
+		top: 35px
+		transform: translateY(-50%)
+		display: none
+		pointer-events: initial
+
+		@include for_tablet_landscape_down
+			display: initial
+
+		a
+			color: $text-color-grey
+			transition: color 0.3s ease
+
+		a:hover
+			color: black
+
+		#menuToggle
+			display: block
+			position: relative
+			-webkit-user-select: none
+			user-select: none
+
+			input
+				display: block
+				width: 40px
+				height: 32px
+				position: absolute
+				top: -7px
+				left: -5px
+				cursor: pointer
+				opacity: 0
+				z-index: 2 
+				-webkit-touch-callout: none
+
+				&:checked ~ span
+					opacity: 1
+					transform: rotate(45deg) translate(-2px, -1px)
+					background: $text-color-main
+
+				&:checked ~ span:nth-last-child(3)
+					opacity: 0
+					transform: rotate(0deg) scale(0.2, 0.2)
+
+				&:checked ~ span:nth-last-child(2)
+					transform: rotate(-45deg) translate(0, -1px)
+
+				&:checked ~ #menu
+					transform: translate(-300px, 0)
+
+			span
+				display: block
+				width: 33px
+				height: 4px
+				margin-bottom: 5px
+				position: relative
+				background: $text-color-main
+				border-radius: 3px
+				z-index: 1
+				transform-origin: 4px 0px
+				transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease
+
+				&:first-child
+					transform-origin: 0% 0%
+
+				&:nth-last-child(2)
+					transform-origin: 0% 100%
+
+			#menu
+				position: absolute
+				top:-27px
+				left: 65px
+				width: 300px
+				height: 101vh
+				padding: 50px
+				background: white
+				list-style-type: none
+				-webkit-font-smoothing: antialiased
+				transform-origin: 0% 0%
+				transform: none
+				transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+
+				li
+					padding: 10px 0
+					font-size: 22px
+

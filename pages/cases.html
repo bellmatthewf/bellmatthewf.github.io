@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Matthew Bell | Analytics Portfolio</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+	<link rel="manifest" href="../site.webmanifest">
+	<link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+	<meta charset="utf-8">
+	<meta name="description" content="Matthew Bell's personal analytics portfolio. Experienced in Python and SQL">
+	<meta name="viewport" content="width=device-width">
+	<meta name="author" content="Matthew Bell">
+	<link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/pages/cases.css">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display%7CRoboto" rel="stylesheet">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136100886-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-136100886-1');
+	</script>
+</head>
+<body>
+	<header id="main_header">
+		<div class="header_wrapper">
+			<a href="../home.html">
+				<img class="logo" src="../assets/images/matthew_bell_analytics_logo.svg" alt="Matthew Bell's analytics portfolio logo">
+			</a>
+			<nav id="main_nav">
+				<a href="../home.html">Home</a>
+				<a href="cases.html">Cases</a>
+				<a href="contact.html">Contact</a>
+			</nav>
+			
+		</div>
+	</header>
+
+	<header id="hamburger_menu">
+		<nav id="mobile_nav">
+			<div id="menuToggle" onclick="stop_scroll()">
+				<input id="mobile_check" type="checkbox"/>
+				<span></span>
+				<span></span>
+				<span></span>
+				<ul id="menu">
+					<li><a href="../home.html">Home</a></li>
+					<li><a href="cases.html">Cases</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<section id="cases">
+		<div class="title_wrapper">
+			<h1 class="main_title">Selected cases</h1>
+		</div>
+
+		<div class="case_overview_left wrapper">
+			<a class="case_img_wrapper" href="toronto_analytics.html">
+				<img class="case_img" src="../assets/images/toronto_title.png" alt="Toronto street travel times infographic.">
+			</a>
+			<div class="case_text_wrapper">
+				<h4 class="case_type">Python, SQL, MySQL, &amp; Tableau</h4>
+				<a href="toronto_analytics.html" class="title_link"><span class="underline">Is Toronto's King Street pilot project worth it</span></a>
+				<p class="case_desc">I bet that if you live in Toronto you have an opinion on the King Street pilot project. Well, why not see whether the data supports your opinion. In this case, I look at whether the project is saving Torontonians time or just causing downtown traffic problems. I'll even show you the fastest streets for driving through downtown Toronto to boot.</p>
+				<a href="toronto_analytics.html" class="button_case">View case</a>
+			</div>
+		</div>
+
+		<div id="first_case" class="case_overview_right wrapper">
+			<a class="case_img_wrapper" href="basketball_analytics.html">
+				<img class="case_img" src="../assets/images/basketball_title.png" alt="Graph of fantasy basketball analytics.">
+			</a>
+			<div class="case_text_wrapper">
+				<h4 class="case_type">Python, Excel, &amp; Tableau</h4>
+				<a href="basketball_analytics.html" class="title_link"><span class="underline">Drafting the ultimate fantasy basketball team</span></a>
+				<p class="case_desc">This case examines how we can apply z-scores in fantasy basketball to out-draft our opponents. Z-scores allow us to assess the value of each player and compare them against Yahoo's projected values. Don't worry though, you don't need to be a basketball fan to follow along!</p>
+				<a href="basketball_analytics.html" class="button_case">View case</a>
+			</div>
+		</div>
+
+		<div class="case_overview_left wrapper">
+			<a class="case_img_wrapper" href="chess_analytics.html">
+				<img class="case_img" src="../assets/images/chess_title.png" alt="Graph of my chess rating over time">
+			</a>
+			<div class="case_text_wrapper">
+				<h4 class="case_type">Python, SQL, PostGreSQL, &amp; Tableau</h4>
+				<a href="chess_analytics.html" class="title_link"><span class="underline">Improving my chess game with data analytics</span></a>
+				<p class="case_desc">If you're a chess player you may find this one interesting. I extract data from all of my online chess games and analyze my decision making to see where I can improve my play. I'm able to find a couple of areas that I can focus on to take my game to the next level.</p>
+				<a href="chess_analytics.html" class="button_case">View case</a>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div id="footer_outer" class="footer_wrapper">
+			<div id="footer_left_wrapper">
+				<a href="../home.html">
+					<img class="footer_logo" src="../assets/images/matthew_bell_analytics_white_logo.svg" alt="Matthew Bell's analytics portfolio logo">
+				</a>
+				<p id="footer_contact_info">+1 (416) 801-8237<br><a href="mailto: bell.matthewf@gmail.com">bell.matthewf@gmail.com</a><br>Toronto, Ontario</p>
+
+			</div>
+			<nav id="footer_nav">
+				<a href="../home.html" class="button_secondary_hoverline_white">Home</a>
+				<a href="cases.html" class="button_secondary_hoverline_white">Cases</a>
+				<a href="contact.html" class="button_secondary_hoverline_white">Contact</a>
+			</nav>
+		</div>
+	</footer>
+<script>
+	const stop_scroll = function () {
+		if (document.getElementById("mobile_check").checked === true) {
+			document.querySelector("body").style.overflow = "hidden"
+			document.querySelector("body").style.position = "fixed"
+		}
+		else {
+			document.querySelector("body").style.overflow = "initial"
+			document.querySelector("body").style.position = "initial"
+		}
+	}
+</script>
+</body>
+</html>

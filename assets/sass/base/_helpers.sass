@@ -1,0 +1,52 @@
+//- - - - - - - - - - Helper Classes - - - - - - - - - - //
+
+// Clear inner floats
+.clearfix 
+	&:before, &:after 
+		content: " "
+		display: table
+
+	&:after 
+		clear: both
+
+.wrapper
+	@include create_wrapper(85%, 1550px, 60px)
+
+	@include for_tablet_landscape_down
+		width: 86%
+
+	@include for_tablet_portrait_down
+		width: 88%
+
+.title_wrapper
+	@include create_wrapper(85%, 1550px, 0px)
+
+.header_wrapper
+	@include create_wrapper(100%, none, 30px)
+
+	@include for_tablet_portrait_down
+		padding-left: 20px
+		padding-right: 20px
+
+.footer_wrapper
+	@include create_wrapper(85%, 1550px, 0px)
+
+	@include for_tablet_landscape_down
+		width: 89%
+
+	@include for_tablet_portrait_down
+		width: 88%
+
+// Logo style
+.logo
+	width: 170px
+	@include for_tablet_portrait_down
+		width: 125px
+
+
+.footer_logo
+	width: 200px
+	margin-bottom: 1.5em
+
+	@include for_tablet_portrait_down
+		width: 150px

@@ -1,0 +1,27 @@
+//- - - - - - - - - - - Header Styling - - - - - - - - - - - //
+
+#main_header
+	height: 70px
+	background-color: #FFF
+
+	.header_wrapper
+		height: 50%
+		position: relative
+		top: 50%
+
+		.logo
+			float: left
+			transform: translateY(-50%)
+
+		#main_nav
+			float: right
+			transform: translateY(-50%)
+
+			a
+				@extend .button_secondary_hoverline
+				text-transform: none
+				margin-left: 2em
+
+			@include for_tablet_landscape_down
+				display: none
+

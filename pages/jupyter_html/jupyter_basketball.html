@@ -9129,15 +9129,15 @@ label {
 }
 /* Flexible box model classes */
 /* Taken from Alex Russell http://infrequently.org/2009/08/css-3-progress/ */
-/* This file is a compatability layer.  It allows the usage of flexible box 
+/* This file is a compatability layer.  It allows the usage of flexible box
 model layouts accross multiple browsers, including older browsers.  The newest,
 universal implementation of the flexible box model is used when available (see
-`Modern browsers` comments below).  Browsers that are known to implement this 
+`Modern browsers` comments below).  Browsers that are known to implement this
 new spec completely include:
 
     Firefox 28.0+
     Chrome 29.0+
-    Internet Explorer 11+ 
+    Internet Explorer 11+
     Opera 17.0+
 
 Browsers not listed, including Safari, are supported via the styling under the
@@ -12519,7 +12519,7 @@ div#pager .ui-resizable-handle {
   background: #f7f7f7;
   border-top: 1px solid #cfcfcf;
   border-bottom: 1px solid #cfcfcf;
-  /* This injects handle bars (a short, wide = symbol) for 
+  /* This injects handle bars (a short, wide = symbol) for
         the resize handle. */
 }
 div#pager .ui-resizable-handle::after {
@@ -13018,7 +13018,7 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
-    
+
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -13072,14 +13072,14 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  } 
-  div.output_wrapper { 
-    display: block;
-    page-break-inside: avoid; 
   }
-  div.output { 
+  div.output_wrapper {
     display: block;
-    page-break-inside: avoid; 
+    page-break-inside: avoid;
+  }
+  div.output {
+    display: block;
+    page-break-inside: avoid;
   }
 }
 </style>
@@ -13147,10 +13147,10 @@ Yahoo's projected values are treated as the gold standard among fantasy basketba
 <img src="../../assets/images/basketball_images/yahoo_projected_values_vs_average_costs.png" alt="Graph of Yahoo projected values compared with actual average draft values" width=100%>
 <br>
 This begs the question though - if everyone is blindly basing their decisions on Yahoo's projected values - <strong>how do we know if those values are accurate</strong>? Well, we don't. We have absolutely no idea where those numbers are coming from or how they are generated.</p>
-<p>Ok, so since we don't know where the Yahoo numbers, I thought it might be helpful to develop a metric for scoring players and assigning them dollar values. This would allow us to compare our values against Yahoo's projections to determine if the Yahoo projections are accurate. But if I'm going to come out with my own method for valuing NBA players, I need to make sure that it is mathematically accurate.</p>
+<p>Ok, so since we don't know where the Yahoo numbers come from, I thought it might be helpful to develop a metric for scoring players and assigning them dollar values. This would allow us to compare our values against Yahoo's projections to determine if the Yahoo projections are accurate. But if I'm going to come up with my own method for valuing NBA players, I need to make sure that it is mathematically accurate.</p>
 <p>Luckily, we can use z-scores to perform a mathematical evaluation of NBA players from their previous season's statistics and then we can use those z-scores to derive a dollar value that we can compare against Yahoo's projections. If you're interested in the details of these calculations, you can see them in the <em>Technical Process</em> section below. </p>
-<p>Here's a quick and dirty overview of why z-scores work - skip this if you don't like math. Z-scores take the NBA average from the previous season across each relevant NBA stat (point, rebounds, assists, etc) and then see how many standard deviations from the mean each player falls in each category. Then we average their z-score across all categories to come up with a weighted score. We can then add up the weighted scores for the top 150 or so players depending on how many players will be in the league, and then apply their fraction of the total to the total number of dollars available for spending in the league. Boom - mathematically accurate player values calculated.</p>
-<p>Math, calculations, and z-scores sound pretty complicated though. And they never mention anything like that in Moneyball so why do we even need them? We'll here's what you need to know - the red line in the graph below is a mathematically accurate assessment of what players are worth. At times, that red line is far away from the green line which is what players actually cost. If the red line is above the green line, then players are mathematically worth more than what they are being sold for. We can buy those players at a discount from what they are actually worth.
+<p>Here's a quick and dirty overview of why z-scores work - skip this if you don't like math. Z-scores take the NBA average from the previous season across each relevant stat (points, rebounds, assists, etc) and then calculate how many standard deviations from the mean each player falls in each category. Then, we average their z-score across all categories to come up with a weighted score. We can then add up the weighted scores for the top 150 or so players depending on how many players will be in the league, and then apply their fraction of the total weighted values to the total number of dollars available for spending in the league. Boom - mathematically accurate player values calculated.</p>
+<p>Math, calculations, and z-scores sound pretty complicated though. And they never mention anything like that in Moneyball so why do we even need them? Well, here's what you need to know - the red line in the graph below is a mathematically accurate assessment of what players are worth. At times, that red line is far away from the green line which is what players actually cost. If the red line is above the green line, then players are mathematically worth more than what they are being sold for. We can buy those players at a discount from what they are actually worth.
 <br>
 <img src="../../assets/images/basketball_images/average_projections_calculated.png" alt="Graph of Yahoo projected values vs actual average draft values vs calculated z-score values" width=100%>
 <br>
@@ -14671,7 +14671,7 @@ Ultimately, in sports nothing is a guarantee, there are always injuries and trad
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Creating formulas to calculate z-scores for each category</span>
 <span class="k">def</span> <span class="nf">calculate_simple_zscore</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">col_name</span><span class="p">,</span> <span class="n">invert_values</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">zscore</span> <span class="o">=</span> <span class="p">(</span><span class="n">series</span> <span class="o">-</span> <span class="n">df_nba_top</span><span class="p">[</span><span class="n">col_name</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">df_nba_top</span><span class="p">[</span><span class="n">col_name</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">invert_values</span><span class="p">:</span> 
+    <span class="k">if</span> <span class="n">invert_values</span><span class="p">:</span>
         <span class="n">zscore</span> <span class="o">=</span> <span class="n">zscore</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
     <span class="k">return</span> <span class="n">zscore</span>
 
@@ -14679,7 +14679,7 @@ Ultimately, in sports nothing is a guarantee, there are always injuries and trad
     <span class="n">mean_percent_made_top</span> <span class="o">=</span> <span class="n">df_nba_top</span><span class="p">[</span><span class="n">makes_col_name</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">df_nba_top</span><span class="p">[</span><span class="n">attempts_col_name</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
     <span class="n">std_percent_made_top</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_nba_top</span><span class="p">[</span><span class="n">makes_col_name</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_nba_top</span><span class="p">[</span><span class="n">attempts_col_name</span><span class="p">])</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
     <span class="n">mean_attempts_top</span> <span class="o">=</span> <span class="n">df_nba_top</span><span class="p">[</span><span class="n">attempts_col_name</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-    
+
     <span class="n">series_percent_made</span> <span class="o">=</span> <span class="n">series_makes</span> <span class="o">/</span> <span class="n">series_attempts</span>
     <span class="n">series_delta_from_average</span> <span class="o">=</span> <span class="n">series_percent_made</span> <span class="o">-</span> <span class="n">mean_percent_made_top</span>
     <span class="n">series_zscore</span> <span class="o">=</span> <span class="n">series_delta_from_average</span> <span class="o">/</span> <span class="n">std_percent_made_top</span>
@@ -14708,7 +14708,7 @@ Ultimately, in sports nothing is a guarantee, there are always injuries and trad
 <span class="k">for</span> <span class="n">col_name</span> <span class="ow">in</span> <span class="n">simple_stats</span><span class="p">:</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">calculate_simple_zscore</span><span class="p">(</span><span class="n">df_nba</span><span class="p">[</span><span class="n">col_name</span><span class="p">],</span> <span class="n">col_name</span><span class="p">)</span>
     <span class="n">zscores_bucket</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-    
+
 <span class="k">for</span> <span class="n">col_name</span> <span class="ow">in</span> <span class="n">inverted_stats</span><span class="p">:</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">calculate_simple_zscore</span><span class="p">(</span><span class="n">df_nba</span><span class="p">[</span><span class="n">col_name</span><span class="p">],</span> <span class="n">col_name</span><span class="p">,</span> <span class="n">invert_values</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">zscores_bucket</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -15413,23 +15413,23 @@ Ultimately, in sports nothing is a guarantee, there are always injuries and trad
         <span class="s2">&quot;FG%&quot;</span> <span class="p">:</span> <span class="n">fg</span><span class="p">,</span>
         <span class="s2">&quot;FT%&quot;</span> <span class="p">:</span> <span class="n">ft</span>
     <span class="p">}</span>
-    
+
     <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;avg_zscore&quot;</span><span class="p">,</span> <span class="s2">&quot;auction_value&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">num_cats</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="kc">False</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">punt_category</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
     <span class="n">df</span><span class="p">[</span><span class="s2">&quot;avg_zscore&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-    
+
     <span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="n">punt_category</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">punt_category</span><span class="p">[</span><span class="n">cat</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
             <span class="n">df</span><span class="p">[</span><span class="s2">&quot;avg_zscore&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">df</span><span class="p">[</span><span class="n">cat</span><span class="p">]</span>
-    
+
     <span class="n">df</span><span class="p">[</span><span class="s2">&quot;avg_zscore&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;avg_zscore&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">num_cats</span>
     <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;avg_zscore&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    
+
     <span class="n">df</span><span class="p">[</span><span class="s2">&quot;avg_zscore_adj&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;avg_zscore&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">155</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;avg_zscore&quot;</span><span class="p">]])[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">df</span><span class="p">[</span><span class="s2">&quot;auction_value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;avg_zscore_adj&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">155</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;avg_zscore_adj&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">league_members</span> <span class="o">*</span> <span class="n">cash_per_member</span>
     <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;avg_zscore_adj&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">df</span><span class="p">[</span><span class="s2">&quot;auction_value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;auction_value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    
+
 <span class="n">punt_cats</span><span class="p">(</span><span class="n">df_zscores</span><span class="p">,</span> <span class="n">ast</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">threes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">df_zscores</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -15701,7 +15701,7 @@ Lastly, I've added the option to select categories to punt which will impact the
   </div>
 </body>
 
- 
+
 
 
 </html>

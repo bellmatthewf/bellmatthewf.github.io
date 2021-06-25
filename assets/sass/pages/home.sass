@@ -8,120 +8,118 @@
 
 //- - - - - - - - - - Banner - - - - - - - - - -//
 #banner
-	height: 500px
+    height: 500px
 
-	#photo_wrapper
-		position: relative
-		height: 100%
-		width: $left-split
-		float: left
-		overflow: hidden
+    #photo_wrapper
+        position: relative
+        height: 100%
+        width: $left-split
+        float: left
+        overflow: hidden
 
-		#main_portrait
-			@include position_photo(50%, 35%)
-			filter: grayscale(30%)
+        #main_portrait
+            @include position_photo(50%, 35%)
+            filter: grayscale(30%)
 
-	#banner_content
-		background-color: $background-white
-		height: 100%
-		width: 100% - $left-split
-		float: right
+    #banner_content
+        background-color: $background-white
+        height: 100%
+        width: 100% - $left-split
+        float: right
 
-		#banner_content_wrapper
-			position: relative
-			top: 50%
-			transform: translateY(-50%)
-			margin: 0 auto
-			width: 80%
-			
-			#title
-				color: $text-color-main
-				font-family: $text-font-main
-				font-size: 40px
-				font-weight: 700
-				top: 25%
-				line-height: 1.4
-				margin-bottom: .5em
-				letter-spacing: 1px
+        #banner_content_wrapper
+            position: relative
+            top: 50%
+            transform: translateY(-50%)
+            margin: 0 auto
+            width: 80%
 
-			#info
-				color: $text-color-grey2
-				font-size: 17px
-				margin-bottom: 1.5em
-				font-family: $code-font-main
-				line-height: 1.40
+            #title
+                color: $text-color-main
+                font-family: $text-font-main
+                font-size: 40px
+                font-weight: 700
+                top: 25%
+                line-height: 1.4
+                margin-bottom: .5em
+                letter-spacing: 1px
 
-			#main_button
-				position: relative
-				left: 50%
-				transform: translateX(-50%)
-		
-			@media only screen and (max-width: 1150px)
-				#title
-					font-size: 32px
-				#info
-					font-size: 16px
+            #info
+                color: $text-color-grey2
+                font-size: 17px
+                margin-bottom: 1.5em
+                font-family: $code-font-main
+                line-height: 1.40
 
-			@media only screen and (max-width: 1000px)
-				#title
-					font-size: 24px
-				#info
-					font-size: 16px
+            #main_button
+                position: relative
+                left: 50%
+                transform: translateX(-50%)
+
+            @media only screen and (max-width: 1150px)
+                #title
+                    font-size: 32px
+                #info
+                    font-size: 16px
+
+            @media only screen and (max-width: 1000px)
+                #title
+                    font-size: 24px
+                #info
+                    font-size: 16px
 
 @media only screen and (max-width: 750px)
-	#banner
-		height: auto
-		display: flex
-		flex-direction: column
+    #banner
+        height: auto
+        display: flex
+        flex-direction: column
 
-		#photo_wrapper
-			width: 100%
-			@include preserve_aspect_ratio(70%)
+        #photo_wrapper
+            width: 100%
+            @include preserve_aspect_ratio(70%)
 
-		#banner_content
-			width: 100%
+        #banner_content
+            width: 100%
 
-			#banner_content_wrapper
-				margin: 1em auto 2.5em auto
-				width: 90%
-				transform: translateY(0%)
-				position: static
-
-
+            #banner_content_wrapper
+                margin: 1em auto 2.5em auto
+                width: 90%
+                transform: translateY(0%)
+                position: static
 
 //- - - - - - - - - - Cases - - - - - - - - - -//
 #cases
-	background-color: #FFF
-	padding: 3.5em 0
+    background-color: #FFF
+    padding: 3.5em 0
 
-	h2
-		text-align: center
-		font-size: 24pt
-		margin-bottom: 1.5em
-		text-transform: uppercase
-		letter-spacing: 5px
+    h2
+        text-align: center
+        font-size: 24pt
+        margin-bottom: 1.5em
+        text-transform: uppercase
+        letter-spacing: 5px
 
-	#cases_display
-		display: flex
-		justify-content: space-between
+    #cases_display
+        display: flex
+        justify-content: space-between
 
-	#see_overview_wrapper
-		text-align: center
-		color: $text-color-main
+    #see_overview_wrapper
+        text-align: center
+        color: $text-color-main
 
-		a
-			margin-top: 4em
+        a
+            margin-top: 4em
+
+.main-link
+    font-weight: 700
+    border-bottom: grey
 
 @media only screen and (max-width: 750px)
-	#cases
-		padding-top: 2em
+    #cases
+        padding-top: 2em
 
-		#cases_display
-			flex-direction: column
-			margin-right: 0
-			margin-left: 0
-			width: 100%
-
-
-
-
+        #cases_display
+            flex-direction: column
+            margin-right: 0
+            margin-left: 0
+            width: 100%
